@@ -3,12 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Raleway&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <script src="https://unpkg.com/vue"></script>
-    <title>Document</title>
+    <title>Soyoon's Chat</title>
 </head>
 <body>
-    
+	<main id="app">
+       <section id="container">
+        <h2>Soyoon's Chat</h2>
+      
+            <div id="user" v-if="!ready">
+            <label for>Your Name: </label>
+            
+            <input type="text" v-model="urName" class="user-name"> 
+            <button @click.prevent="addName" value="Add" type="submit">Add</button>
+            </div>
+            
+
+           
+           <!-- <form id="form" v-if="ready">
+               <h3 v-if="ready" id="confirm-name">{{urName}}</h3>
+               <textarea v-model="newMessage" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+               <input @click.prevent="dispatchMessage" type="submit">
+                </form> -->
+                
+            <ul id="receive" v-if="ready">
+                
+           <li class="dot" v-if="typing">...typing</li>
+           
+            <li class="newMessage" v-for="message in messages">
+              
+           <span class="compare" :class="{'original':message.type === 1}">{{message.message}}</span>
+            </li></ul>
+    </section>
+
+    <form id="form" v-if="ready">
+        <h3 v-if="ready" id="confirm-name">{{urName}}</h3>
+        <textarea v-model="newMessage" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+        <input @click.prevent="dispatchMessage" type="submit">
+         </form>
+
+       
+	</main>
     <script src="/socket.io/socket.io.js"></script>
 	<script type="module" src="js/main_vm.js"></script>
 </body>

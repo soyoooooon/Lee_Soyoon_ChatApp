@@ -1,0 +1,119 @@
+@import '_vars';
+
+body{
+    background-image: url('../images/me.jpg');
+    // background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+main{
+    width:100vw;
+  
+ #container{
+   h2 {
+    font-size: 4rem;
+    color: burlywood;
+    font-family: $m-font;
+    text-align: center;
+    margin-top: 3vh;
+   }
+   #user{
+    margin-top: 15vh;
+    margin-left: 17vw;
+       label{
+        font-size: 2em;
+        text-align: center;
+        font-family: $m-font;
+        margin-left: 18vw;
+       }
+       input{
+           border:none;
+           padding: 15px;
+       }
+       button{
+        width: 50px;
+        height: 25px;
+        border:none;
+        padding: 3px;
+        margin-left: 5px;
+        background-color: orange;
+        font-size: 14px;
+        font-family: $p-font;
+       }
+       
+   }
+
+ 
+
+    #receive{
+            width: 60vw;
+            margin: 3vh auto 0;
+        height: 65vh;
+        background-color: paleturquoise;
+
+        .dot{
+            animation-name: colorchange;
+            animation-duration: 3s ;
+            animation-iteration-count: infinite;
+        
+            @keyframes colorchange{
+                0% {color: #ffffff;}
+              100% {color: paleturquoise;}
+              
+            }
+        }
+
+
+        .original{   
+    padding: 8px 12px;
+    background-color: white !important; 
+    border-radius: 8px;
+    font-family: $p-font;
+    margin-bottom: 1rem !important;
+    float:left !important;
+    clear: both !important;
+        }
+
+        .compare{
+    padding: 8px 12px;    
+    float: right;
+    clear: both !important;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: thistle;
+    color: olivedrab;
+    font-family: $p-font;
+        }
+    }
+}
+#form{
+    h3{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-family: $m-font;
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: bolder;
+    }
+    margin: 2vh auto 0;
+    width: 60vw;
+    display:flex;
+    flex-direction: column;
+
+    textarea{
+        border: none;
+        height: 7vh;
+    }
+
+    input{
+        width :15vw;
+        height: 30px;
+        margin: 10px auto 0;
+        border: none;
+        font-size: 1em;
+        background-color: orange;
+        font-family: $p-font;
+    }
+}
+
+}
+}
