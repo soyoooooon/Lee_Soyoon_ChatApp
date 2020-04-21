@@ -24,18 +24,13 @@
             
 
            
-           <!-- <form id="form" v-if="ready">
-               <h3 v-if="ready" id="confirm-name">{{urName}}</h3>
-               <textarea v-model="newMessage" class="message" type="text" autocomplete="off" id="textarea"></textarea>
-               <input @click.prevent="dispatchMessage" type="submit">
-                </form> -->
+         
                 
             <ul id="receive" v-if="ready">
                 
            <li class="dot" v-if="typing">...typing</li>
-           
+      
             <li class="newMessage" v-for="message in messages">
-              
            <span class="compare" :class="{'original':message.type === 1}">{{message.message}}</span>
             </li></ul>
     </section>
@@ -47,7 +42,7 @@
          </form>
 
        
-	</main>
+        </main>
     <script src="/socket.io/socket.io.js"></script>
 	<script type="module" src="js/main_vm.js"></script>
 </body>

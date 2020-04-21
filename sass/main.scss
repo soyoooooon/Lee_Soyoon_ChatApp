@@ -1,24 +1,25 @@
 @import '_vars';
 
 body{
-    background-image: url('../images/me.jpg');
+    background-color: #ffd300;
     // background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 main{
+    overflow-x: hidden;
     width:100vw;
   
  #container{
+    overflow-x: hidden;
    h2 {
     font-size: 4rem;
-    color: burlywood;
+  
     font-family: $m-font;
     text-align: center;
-    margin-top: 3vh;
+    margin: 40px 0 auto;
    }
    #user{
-    margin-top: 15vh;
-    margin-left: 17vw;
+    margin: 40px auto 0;
        label{
         font-size: 2em;
         text-align: center;
@@ -47,7 +48,7 @@ main{
     #receive{
             width: 60vw;
             margin: 3vh auto 0;
-        height: 65vh;
+        height: 60vh;
         background-color: paleturquoise;
 
         .dot{
@@ -117,3 +118,33 @@ main{
 
 }
 }
+@media screen and (min-width: 747px) and(max-width: 1150px){
+body{
+    main{
+
+    #container{
+    #user{
+        label{
+            margin-left: 32%;
+        }
+
+    }
+}
+    }}
+
+}
+@media screen and (min-width: 1151px) {
+    body{
+        main{
+    
+        #container{
+        #user{
+            label{
+                margin-left: 37%;
+            }
+    
+        }
+    }
+        }}
+    
+    }

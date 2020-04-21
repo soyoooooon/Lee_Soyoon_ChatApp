@@ -10,7 +10,7 @@ let app = new Vue
         newMessage:null,
         messages: [],
         typing: false,
-        urName: null,
+        urName: "",
         ready: false,
      
     },
@@ -29,15 +29,19 @@ let app = new Vue
         dispatchMessage(){
             this.messages.push({message: this.newMessage, type : 0 })
             socket.emit('chatMessage', this.newMessage)
+            
              this.newMessage = null
-            // name: this.urName || "anonymous"
+           
 
             
         },
 
         addName(){
             this.ready = true
+            
             socket.emit('joined',this.urName)
+           
+            
         }
     },
     created(){
@@ -60,6 +64,9 @@ let app = new Vue
             this.stopTyping = false;
         })
 
+        socket.on('urName',()=>{
+            this.urName.push({message: data })
+        })
         
     }
 
